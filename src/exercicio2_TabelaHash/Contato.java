@@ -40,7 +40,7 @@ public class Contato {
 	public static void adicionarEmail(String email) {
 		listaDeEmails.add(email);
 	}
-	
+
 	public static void removerEmail(String email) {
 
 		int posicao = 0;

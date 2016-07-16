@@ -5,7 +5,7 @@ public class ListaEncadeada {
 	ListaEncadeada anterior;
 	Contato contato;
 	ListaEncadeada proximo;
-
+	
 	public ListaEncadeada getAnterior() {
 		return anterior;
 	}

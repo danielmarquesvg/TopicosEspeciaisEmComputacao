@@ -37,6 +37,18 @@ public class Contato {
 
 	}
 
+	public static void listarTelefones() {
+
+		if (listaDeTelefones.size() == 0) {
+			System.out.print("Nenhum telefone cadastrado\n");
+		} else {
+			for (int i = 0; i < listaDeTelefones.size(); i++) {
+				System.out.print(listaDeTelefones.get(i));
+			}
+		}
+
+	}
+
 	public static void adicionarEmail(String email) {
 		listaDeEmails.add(email);
 	}
@@ -56,6 +68,17 @@ public class Contato {
 
 		}
 
+	}
+
+	public static void listarEmails() {
+
+		if (listaDeEmails.size() == 0) {
+			System.out.println("Nenhum e-mail cadastrado\n");
+		} else {
+			for (int i = 0; i < listaDeEmails.size(); i++) {
+				System.out.println(listaDeEmails.get(i));
+			}
+		}
 	}
 
 }

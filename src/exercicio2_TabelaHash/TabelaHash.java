@@ -36,9 +36,9 @@ public class TabelaHash {
 		
 		if (arrayDaTabelaHash[funcaoHash] == null) {
 
-			//arrayDaTabelaHash[funcaoHash].setAnterior(null);
+			arrayDaTabelaHash[funcaoHash].setAnterior(null);
 			arrayDaTabelaHash[funcaoHash].setContato(contato);
-			//arrayDaTabelaHash[funcaoHash].setProximo(null);
+			arrayDaTabelaHash[funcaoHash].setProximo(null);
 
 		} else {
 
@@ -54,19 +54,24 @@ public class TabelaHash {
 
 	}
 
-	public Contato pesquisarContato(String nomeDoContato) {
-		Contato contato = new Contato();
-
+	public void pesquisarContato(String nomeDoContato) {
+		
 		int posicao = 0;
 		boolean flagContatoEncontrado = false;
 		
 		while((posicao < arrayDaTabelaHash.length) && (flagContatoEncontrado == false)){
 			
 			ListaEncadeada listaAuxiliar = arrayDaTabelaHash[posicao];
-			while (listaAuxiliar != null) {
+			while (listaAuxiliar != null && listaAuxiliar.getContato() != null && flagContatoEncontrado == false) {
 				
 				if (listaAuxiliar.getContato().getNome().equals(nomeDoContato) == true) {
-					contato = arrayDaTabelaHash[posicao].getContato();
+					
+					System.out.println("Nome: "+listaAuxiliar.getContato().getNome());
+					System.out.print("Email: ");
+					listaAuxiliar.getContato().listarEmails();
+					System.out.print("Telefone: ");
+					listaAuxiliar.getContato().listarTelefones();
+					
 					flagContatoEncontrado = true;
 				} else {
 					listaAuxiliar = listaAuxiliar.getProximo();
@@ -76,8 +81,13 @@ public class TabelaHash {
 			posicao = posicao + 1;
 			
 		}
+		
+		if(flagContatoEncontrado == false){
+			System.out.println("Nenhum contato foi encontrado");
+		}
+		
+		System.out.println("\n");
 
-		return contato;
 	}
 
 	public void removerContato(String nomeDoContato) {
@@ -90,7 +100,7 @@ public class TabelaHash {
 		
 		while((posicao < arrayDaTabelaHash.length) && (flagContatoEncontrado == false)){
 			
-			while (arrayDaTabelaHash[posicao] != null) {
+			while (arrayDaTabelaHash[posicao] != null && (flagContatoEncontrado == false)) {
 				
 				//verifico se é o primeiro objeto da lista encadeada, se sim, salvo o mesmo
 				if(flagCabecaDaLista == true){
@@ -113,6 +123,8 @@ public class TabelaHash {
 			
 			posicao = posicao + 1;			
 		}
+		
+		System.out.println("Contato removido\n\n");
 
 	}
 	
@@ -120,7 +132,7 @@ public class TabelaHash {
 		
 		int posicao = 0;
 		
-		System.out.println("Listar Contatos\n");
+		System.out.println("\nListar Contatos\n\n");
 		while(posicao < arrayDaTabelaHash.length){
 			
 			ListaEncadeada variavelAuxiliar = arrayDaTabelaHash[posicao];

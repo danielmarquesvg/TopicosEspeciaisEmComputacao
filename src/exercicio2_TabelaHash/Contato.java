@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class Contato {
 
-	public static String nome;
-	public static ArrayList<String> listaDeTelefones = new ArrayList<String>();
-	public static ArrayList<String> listaDeEmails = new ArrayList<String>();
+	public String nome;
+	public ArrayList<String> listaDeTelefones = new ArrayList<String>();
+	public ArrayList<String> listaDeEmails = new ArrayList<String>();
 
 	public String getNome() {
 		return nome;
@@ -16,11 +16,11 @@ public class Contato {
 		this.nome = nome;
 	}
 
-	public static void adicionarTelefone(String numeroDoTelefone) {
+	public void adicionarTelefone(String numeroDoTelefone) {
 		listaDeTelefones.add(numeroDoTelefone);
 	}
 
-	public static void removerTelefone(String numeroDoTelefone) {
+	public void removerTelefone(String numeroDoTelefone) {
 
 		int posicao = 0;
 		boolean flagNumeroRemovido = false;
@@ -37,7 +37,7 @@ public class Contato {
 
 	}
 
-	public static void listarTelefones() {
+	public void listarTelefones() {
 
 		if (listaDeTelefones.size() == 0) {
 			System.out.print("Nenhum telefone cadastrado\n");
@@ -49,11 +49,11 @@ public class Contato {
 
 	}
 
-	public static void adicionarEmail(String email) {
+	public void adicionarEmail(String email) {
 		listaDeEmails.add(email);
 	}
 
-	public static void removerEmail(String email) {
+	public void removerEmail(String email) {
 
 		int posicao = 0;
 		boolean flagEmailRemovido = false;
@@ -70,7 +70,7 @@ public class Contato {
 
 	}
 
-	public static void listarEmails() {
+	public void listarEmails() {
 
 		if (listaDeEmails.size() == 0) {
 			System.out.println("Nenhum e-mail cadastrado\n");

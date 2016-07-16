@@ -45,6 +45,12 @@ public class Main {
 			} else {
 				if(opcao == 2){
 					
+					System.out.print("\n\nPesquisar contato\n");
+					
+					System.out.print("Nome do contato a pesquisar: ");
+					String nome = scanner.next();
+					tabelaHash.pesquisarContato(nome);
+					
 				} else {
 					if(opcao == 3){
 						tabelaHash.listarContatos();
